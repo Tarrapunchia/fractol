@@ -4,6 +4,12 @@ Project made for 42CommonCore project "fract'ol" @42Firenze.
 
 The aim is to display on screen, using a xlib wrapper library called minlibx, different types of fractals based on the set used to calculate them. The choice (and other optional parameters) are passed via terminal when the program is launched.
 
+## Table of Contents
+- [Features](#features)
+- [Purpose](#purpose)
+- [Logical Steps](#logical-steps)
+- [Useful Resources}(#useful-resources)
+
 ## Features
 
 While in the program is possible to:
@@ -31,6 +37,8 @@ Logical steps involved in writing such a program are:
 - Programming the mouse and keyboard hooks.
 - Loop.
 - VALGRIND.
+
+## Useful Resources
 
 
 
