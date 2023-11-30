@@ -4,8 +4,8 @@ void    frac_init(t_fractal *fractal, char *title, int flag)
 {
     fractal->flag = flag;
     fractal->mlx = mlx_init();
-    fractal->win = mlx_new_window(fractal->mlx, 800, 800, title);
-    fractal->img = mlx_new_image(fractal->mlx, 800, 800);
+    fractal->win = mlx_new_window(fractal->mlx, WIDTH, HEIGHT, title);
+    fractal->img = mlx_new_image(fractal->mlx, WIDTH, HEIGHT);
     fractal->addr = mlx_get_data_addr(fractal->img, &fractal->bits_per_pixel, &fractal->line_length, &fractal->endian);
     fractal->offset_x = -2.1;
     fractal->offset_y = -1.21;
@@ -17,7 +17,7 @@ void    frac_init(t_fractal *fractal, char *title, int flag)
     fractal->y = 0;
     fractal->zoom = 300;
     fractal->max_iter = 100;
-    fractal->color = 0xFCBE11;
+    fractal->color = BASE_COLOR;
     fractal->color_shift_step = (255*255*255) / 100;
     fractal->color_shift_max = 0xFFFFFF;
     fractal->color_shift_min = 0x000000;

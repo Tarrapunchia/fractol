@@ -23,7 +23,7 @@
 # define WIDTH 800
 # define HEIGHT 800
 # define INSTRUCTIONS "Usage: ./fractol --mandelbrot (-m)\n\
-                 --julia (-j)\n\
+                 --julia (-j) (double) (double)\n\
                  --burning-ship (-bs)\n\
                  --help (-h)\n"
 # define COMMANDS "Commands:\n\
@@ -31,9 +31,11 @@
                  Move: arrows\n\
                  Change color: r f t\n\
                  Change color shift step: c v b\n\
-                 Reset: space\n\
+                 Reset: 1\n\
+                 Randomize Julia: j\n\
                  Exit: esc\n"
 
+# define BASE_COLOR /* 0xFCBE11 */265
 # define ESC 65307
 # define LEFT 65361
 # define RIGHT 65363
@@ -43,13 +45,15 @@
 # define MINUS 45
 # define SPACE 32
 # define BACKSPACE 65288
+# define ENTER 65293
 # define R 114
 # define F 102
 # define T 116
 # define C 99
 # define V 118
 # define B 98
-# define ONE 65457
+# define J 106
+# define ONE 49
 # define WHEEL_UP 4
 # define WHEEL_DOWN 5
 # define LEFT_CLICK 1
@@ -93,6 +97,7 @@ int     check_valid(char *arg);
 int     key_hook(int keycode, t_fractal *fractal);
 int     mouse_hook(int button, int x, int y, t_fractal *fractal);
 float ft_strtof(const char *str);
+void    random_double(t_fractal *fractal);
 // main
 
 // draw
@@ -103,6 +108,6 @@ void    calculate_mandelbrot(t_fractal *fractal);
 void    *draw_mandelbrot(void *frac_void);
 
 // julia
-void    calculate_julia(t_fractal *fractal, double c_x, double c_y);
-void    *draw_julia(t_fractal *fractal, double c_x, double c_y);
+void    calculate_julia(t_fractal *fractal);
+void    *draw_julia(t_fractal *fractal);
 #endif

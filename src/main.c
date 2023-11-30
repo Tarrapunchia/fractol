@@ -18,7 +18,9 @@ int main(int argc, char **argv)
     {
         printf("sono in julia\n");
         frac_init(fractal, "Julia", flag);
-        draw_julia(fractal, ft_strtof(argv[2]), ft_strtof(argv[3]));
+        fractal->c_x = ft_strtof(argv[2]);
+        fractal->c_y = ft_strtof(argv[3]);
+        draw_julia(fractal);
     }
     mlx_key_hook(fractal->win, key_hook, fractal);
     mlx_mouse_hook(fractal->win, mouse_hook, fractal);
