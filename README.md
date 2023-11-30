@@ -8,7 +8,7 @@ The aim is to display on screen, using a xlib wrapper library called minlibx, di
 - [Features](#features)
 - [Purpose](#purpose)
 - [Logical Steps](#logical-steps)
-- [Useful Resources}(#useful-resources)
+- [Useful Resources](#useful-resources)
 
 ## Features
 
