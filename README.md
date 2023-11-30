@@ -39,7 +39,8 @@ Logical steps involved in writing such a program are:
 - VALGRIND.
 
 ## Useful Resources
-- [![How to generate fractals (in french, sub ENG)](https://img.youtube.com/vi/wUlVFYJIUNA/0.jpg)](https://www.youtube.com/watch?v=wUlVFYJIUNA)
+- How to generate fractals (in french, sub ENG). The first part is enlightening!
+[![How to generate fractals (in french, sub ENG)](https://img.youtube.com/vi/wUlVFYJIUNA/0.jpg)](https://www.youtube.com/watch?v=wUlVFYJIUNA)
 
 
 
