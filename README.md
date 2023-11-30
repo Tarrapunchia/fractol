@@ -23,6 +23,7 @@ The purpose of the project is to become familiar with communication between clie
 
 Logical steps involved in writing such a program are:
 - Understanding what a fractal is and how it can be displayed.
+- (eventually, you will reach to the conclusion that the most simple and probably best way is to take the imaginary part as the y and the real part as the x)
 - Opening a communication with X-Window, creating a window, and an image.
 - Calculating the chosen set for each point on the screen:
   - Print the pixel in black if the set oscillates between two finite values.
