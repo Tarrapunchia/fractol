@@ -39,7 +39,7 @@ Logical steps involved in writing such a program are:
 - VALGRIND.
 
 ## Useful Resources
-- [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/wUlVFYJIUNA/0.jpg)](https://www.youtube.com/watch?v=wUlVFYJIUNA)
+- [![How to generate fractals (in french, sub ENG)](https://img.youtube.com/vi/wUlVFYJIUNA/0.jpg)](https://www.youtube.com/watch?v=wUlVFYJIUNA)
 
 
 
