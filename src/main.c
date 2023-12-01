@@ -18,6 +18,7 @@ int main(int argc, char **argv)
     {
         printf("sono in julia\n");
         frac_init(fractal, "Julia", flag);
+        printf("c_x: %f\tc_y: %f\n", ft_strtof(argv[2]), ft_strtof(argv[3]));
         fractal->c_x = ft_strtof(argv[2]);
         fractal->c_y = ft_strtof(argv[3]);
         draw_julia(fractal);

@@ -107,7 +107,7 @@ float ft_strtof(const char *str)
             decimalMultiplier *= 0.1f;
             decimal = 1;
         }
-        return (result * sign);
+        return (result * (float)sign);
     }
-    return (sign * (float)sign * (float)((int)result));
+    return ((float)sign * (float)((int)result));
 }

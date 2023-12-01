@@ -15,8 +15,8 @@ void    calculate_julia(t_fractal *fractal)
     {
         // parte reale
         x_tmp = fractal->z_x;
+        fractal->z_x =  fractal->z_x * fractal->z_x - fractal->z_y * fractal->z_y + fractal->c_x - 0.8;
         // parte immaginaria
-        fractal->z_x =  fractal->z_x * fractal->z_x - fractal->z_y * fractal->z_y * fractal->z_y + fractal->c_x;
         fractal->z_y = 2.0 * x_tmp * fractal->z_y + fractal->c_y;
         // se tende all'infinito esco
         if ((fractal->z_x * fractal->z_x + fractal->z_y * fractal->z_y) >= __DBL_MAX__)
