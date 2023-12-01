@@ -39,6 +39,10 @@ Logical steps involved in writing such a program are:
 - VALGRIND.
 
 ## Useful Resources
+
+- Minlibx Documentation Explained (https://harm-smits.github.io/42docs/libs/minilibx)
+- Introduction to the minilibX : a simple X-Window programming API in C (by Oceano)
+[![Minlibix Explaination](https://img.youtube.com/vi/bYS93r6U0zg/0.jpg)](https://www.youtube.com/watch?v=bYS93r6U0zg)
 - How to generate fractals (in french, sub ENG). The first part is enlightening!
 [![How to generate fractals (in french, sub ENG)](https://img.youtube.com/vi/wUlVFYJIUNA/0.jpg)](https://www.youtube.com/watch?v=wUlVFYJIUNA)
 
