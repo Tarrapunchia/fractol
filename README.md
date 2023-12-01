@@ -13,6 +13,11 @@ The aim is to display on screen, using a xlib wrapper library called minlibx, di
 ## Features
 
 While in the program is possible to:
+- Fractals displayable:
+  - Mandelbrot 
+  - Julia
+  - Burning Ships
+  - Tricorn
 - Zoom in/out with mouse wheel, with the zoom centered on mouse position.
 - Move around and zoom in/out with keyboard.
 - Change the iterations of the set, to deepen the drawing.

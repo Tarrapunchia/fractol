@@ -16,7 +16,10 @@ void    frac_init(t_fractal *fractal, char *title, int flag)
     fractal->x = 0;
     fractal->y = 0;
     fractal->zoom = 300;
-    fractal->max_iter = 100;
+    if (flag == 3)
+        fractal->max_iter = 30;
+    else
+        fractal->max_iter = 100;
     fractal->color = BASE_COLOR;
     fractal->color_shift_step = (255*255*255) / 100;
     fractal->color_shift_max = 0xFFFFFF;
@@ -36,18 +39,6 @@ int	killall_free(t_fractal *fractal)
 	return (0);
 }
 
-void    my_mlx_pixel_put(t_fractal *data, int x, int y, int color)
-{
-    // prendo l'indirizzo di memoria del pixel che voglio disegnare
-    char    *dst;
-
-    // calcolo l'offset
-    dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-
-    // scrivo i byte per disegnare il pixel
-    *(unsigned int*)dst = color;
-}
-
 int check_valid(char *arg)
 {
     if (!ft_strncmp(arg, "--mandelbrot\0", 13) || !ft_strncmp(arg, "-m\0", 3))
@@ -56,6 +47,8 @@ int check_valid(char *arg)
         return (2);
     else if (!ft_strncmp(arg, "--burning-ship\0", 15) || !ft_strncmp(arg, "-bs\0", 4))
         return (3);
+    else if (!ft_strncmp(arg, "--tricorn\0", 10) || !ft_strncmp(arg, "-t\0", 3))
+        return (4);
     else
         return (0);
 }
@@ -82,6 +75,20 @@ int    check_args(int argc, char **argv)
         exit(1);
     }
     return (valid);
+}
+
+void    random_double(t_fractal *fractal)
+{
+    fractal->c_x = (double)rand() / (double)RAND_MAX * 4 - 2;
+    fractal->c_y = (double)rand() / (double)RAND_MAX * 4 - 2;
+}
+
+// TO BE ADDED TO LIBFT
+double  abs_double(double n)
+{
+    if (n < 0)
+        return (n * -1);
+    return (n);
 }
 float ft_strtof(const char *str)
 {
