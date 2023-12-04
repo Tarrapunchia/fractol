@@ -76,11 +76,27 @@ int    check_args(int argc, char **argv)
     }
     return (valid);
 }
-
+/*  NON POSSO USARE RAND PERCHE' NON E' IN MATH.H -_-"
 void    random_double(t_fractal *fractal)
 {
     fractal->c_x = (double)rand() / (double)RAND_MAX * 4 - 2;
     fractal->c_y = (double)rand() / (double)RAND_MAX * 4 - 2;
+} */
+
+void    random_double(t_fractal *fractal)
+{
+    if (fractal->c_x == 0 && fractal->c_y == 0)
+    {
+        fractal->c_x = 0;
+        fractal->c_y = 0.138240;
+        return ;
+    }
+    fractal->c_x *= 1.1 * 4 - 2;
+    fractal->c_y *=  1.1 * 4 - 2;
+    if (fractal->c_x > 2)
+        fractal->c_x = 0;
+    if (fractal->c_y > 2)
+        fractal->c_y = 0;
 }
 
 // TO BE ADDED TO LIBFT

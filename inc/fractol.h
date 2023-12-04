@@ -19,7 +19,6 @@
 # include <stdbool.h>
 # include <limits.h>
 # include <float.h>
-# include <complex.h>
 # include "../libft/libft.h"
 /****************************************************************************/
 /*                               DEFINES                                    */
@@ -40,6 +39,7 @@
 				 Exit: esc\n"
 
 # define BASE_COLOR /* 0xFCBE11 */265
+# define C_STEP 0.001
 # define ESC 65307
 # define LEFT 65361
 # define RIGHT 65363
@@ -57,6 +57,8 @@
 # define V 118
 # define B 98
 # define J 106
+# define K 107
+# define L 108
 # define ONE 49
 # define WHEEL_UP 4
 # define WHEEL_DOWN 5
@@ -98,7 +100,7 @@ unsigned char	get_r(int trgb);
 unsigned char	get_g(int trgb);
 unsigned char	get_b(int trgb); */
 // TO BE ADDED TO LIBFT
-float ft_strtof(const char *str);
+float	ft_strtof(const char *str);
 /****************************************************************************/
 /*                               UTILS.C                                    */
 /****************************************************************************/
@@ -111,9 +113,17 @@ void	random_double(t_fractal *fractal);
 double	abs_double(double n);
 
 /****************************************************************************/
-/*                               HOOKS.C                                    */
+/*                               KEY_HOOKS.C                                */
 /****************************************************************************/
 int		key_hook(int keycode, t_fractal *fractal);
+void	key_hook2(int keycode, t_fractal *fractal);
+void	key_hook3(int keycode, t_fractal *fractal);
+void	key_hook4(int keycode, t_fractal *fractal);
+void	key_hook5(int keycode, t_fractal *fractal);
+
+/****************************************************************************/
+/*                               MOUSE_HOOKS.C                              */
+/****************************************************************************/
 int		mouse_hook(int button, int x, int y, t_fractal *fractal);
 
 /****************************************************************************/
@@ -133,6 +143,8 @@ void	*draw_mandelbrot(void *frac_void);
 /****************************************************************************/
 void	calculate_julia(t_fractal *fractal);
 void	*draw_julia(t_fractal *fractal);
+void	julia_hook(int keycode, t_fractal *fractal);
+void	reset_julia(t_fractal *fractal);
 
 /****************************************************************************/
 /*                               BURNINGSHIP.C                              */
