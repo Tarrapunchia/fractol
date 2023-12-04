@@ -32,6 +32,7 @@ int	killall_free(t_fractal *fractal)
     printf("Killing all processes...\n");
 	mlx_destroy_image(fractal->mlx, fractal->img);
 	mlx_destroy_window(fractal->mlx, fractal->win);
+    mlx_destroy_display(fractal->mlx);
 	free(fractal->mlx);
 	free(fractal);
     printf("Memory Cleared.\nExiting...\n");
