@@ -6,7 +6,7 @@
 /*   By: fzucconi <fzucconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 11:30:06 by fzucconi          #+#    #+#             */
-/*   Updated: 2023/10/12 13:43:05 by fzucconi         ###   ########.fr       */
+/*   Updated: 2023/12/05 16:34:36 by fzucconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,10 @@ int				ft_puthexa_l_fd(unsigned int nb, int fd);
 int				ft_puthexa_u_fd(unsigned int nb, int fd);
 int				ft_putunbr_fd(unsigned int n, int fd);
 int				ft_putptr_fd(unsigned long int nb, int fd);
+
+/******************************************************************************/
+/*                     		Math functions                                    */
+/******************************************************************************/
+float			ft_strtof(const char *str);
+double			abs_double(double n);
 #endif

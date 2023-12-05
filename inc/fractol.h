@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fractol.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fzucconi <fzucconi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/05 14:26:48 by fzucconi          #+#    #+#             */
+/*   Updated: 2023/12/05 18:15:47 by fzucconi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FRACTOL_H
 # define FRACTOL_H
 /****************************************************************************/
@@ -6,29 +18,28 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <math.h>
-# include <pthread.h>
-# include <mlx.h>
 # include <fcntl.h>
 # include <stdio.h>
 # include <string.h>
 # include <errno.h>
 # include <sys/types.h>
 # include <sys/stat.h>
-# include <sys/time.h>
 # include <time.h>
 # include <stdbool.h>
 # include <limits.h>
-# include <float.h>
 # include "../libft/libft.h"
+# include "../minilibx-linux/mlx.h"
+
 /****************************************************************************/
 /*                               DEFINES                                    */
 /****************************************************************************/
 # define WIDTH 800
 # define HEIGHT 800
 # define INSTRUCTIONS "Usage: ./fractol --mandelbrot (-m)\n\
-				 --julia (-j) (double) (double)\n\
-				 --burning-ship (-bs)\n\
-				 --help (-h)\n"
+		 --julia (-j) (double) (double)\n\
+		 --burning-ship (-bs)\n\
+		 --tricorn (-t)\n\
+		 --help (-h)\n"
 # define COMMANDS "Commands:\n\
 				 Zoom: + -\n\
 				 Move: arrows\n\
@@ -36,9 +47,11 @@
 				 Change color shift step: c v b\n\
 				 Reset: 1\n\
 				 Randomize Julia: j\n\
+				 Increase Cs (Julia): k\n\
+				 Decrease Cs (Julia): l\n\
 				 Exit: esc\n"
 
-# define BASE_COLOR /* 0xFCBE11 */265
+# define BASE_COLOR 265
 # define C_STEP 0.001
 # define ESC 65307
 # define LEFT 65361
@@ -65,52 +78,45 @@
 # define LEFT_CLICK 1
 # define RIGHT_CLICK 3
 
-typedef struct s_fractal {
-	int  flag;
-	void *mlx;
-	void *win;
-	void *img;
-	char *addr;
-	int bits_per_pixel;
-	int line_length;
-	int endian;
-	double offset_x;
-	double offset_y;
-	int x;
-	int y;
-	double z_y;
-	double z_x;
-	double c_y;
-	double c_x;
-	double zoom;
-	int max_iter;
-	int color;
-	int color_shift;
-	int color_shift_max;
-	int color_shift_min;
-	int color_shift_step;
-}   t_fractal;
+typedef struct s_fractal
+{
+	int		flag;
+	void	*mlx;
+	void	*win;
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+	double	offset_x;
+	double	offset_y;
+	int		x;
+	int		y;
+	double	z_y;
+	double	z_x;
+	double	c_y;
+	double	c_x;
+	double	zoom;
+	int		max_iter;
+	int		color;
+	int		color_shift;
+	int		color_shift_max;
+	int		color_shift_min;
+	int		color_shift_step;
+}	t_fractal;
 
 /****************************************************************************/
 /*                               PROTOTYPES                                 */
 /****************************************************************************/
-/* int	        create_trgb(unsigned char t, unsigned char r, unsigned char g, unsigned char b);
-unsigned char	get_t(int trgb);
-unsigned char	get_r(int trgb);
-unsigned char	get_g(int trgb);
-unsigned char	get_b(int trgb); */
-// TO BE ADDED TO LIBFT
 float	ft_strtof(const char *str);
 /****************************************************************************/
 /*                               UTILS.C                                    */
 /****************************************************************************/
-void	frac_init(t_fractal *fractal, char* title, int flag);
+void	frac_init(t_fractal *fractal, char *title, int flag);
 int		killall_free(t_fractal *fractal);
 int		check_valid(char *arg);
 int		check_args(int argc, char **argv);
 void	random_double(t_fractal *fractal);
-// TO BE ADDED TO LIBFT
-double	abs_double(double n);
 
 /****************************************************************************/
 /*                               KEY_HOOKS.C                                */
@@ -143,7 +149,7 @@ void	*draw_mandelbrot(void *frac_void);
 /****************************************************************************/
 void	calculate_julia(t_fractal *fractal);
 void	*draw_julia(t_fractal *fractal);
-void	julia_hook(int keycode, t_fractal *fractal);
+int		julia_hook(int keycode, t_fractal *fractal);
 void	reset_julia(t_fractal *fractal);
 
 /****************************************************************************/

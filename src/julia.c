@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   julia.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fzucconi <fzucconi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/05 14:25:43 by fzucconi          #+#    #+#             */
+/*   Updated: 2023/12/05 18:15:34 by fzucconi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/fractol.h"
 
 void	calculate_julia(t_fractal *fractal)
@@ -43,12 +55,12 @@ void	*draw_julia(t_fractal *fractal)
 	return (NULL);
 }
 
-void	julia_hook(int keycode, t_fractal *fractal)
+int	julia_hook(int keycode, t_fractal *fractal)
 {
 	if (keycode == J)
 	{
 		random_double(fractal);
-		printf("Randomized Julia!\nc_x: %f\tc_y: %f\n", fractal->c_x, fractal->c_y);
+		printf("Rand Julia!\nc_x: %f\tc_y: %f\n", fractal->c_x, fractal->c_y);
 	}
 	else if (keycode == K)
 	{
@@ -62,6 +74,7 @@ void	julia_hook(int keycode, t_fractal *fractal)
 		fractal->c_y -= C_STEP;
 		printf("Decreased Cs!\n");
 	}
+	return (0);
 }
 
 void	reset_julia(t_fractal *fractal)

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   key_hooks.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fzucconi <fzucconi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/05 14:25:52 by fzucconi          #+#    #+#             */
+/*   Updated: 2023/12/05 17:14:29 by fzucconi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/fractol.h"
 
 int	key_hook(int keycode, t_fractal *fractal)
@@ -128,23 +140,4 @@ void	key_hook5(int keycode, t_fractal *fractal)
 		if (keycode != ENTER)
 			printf("Unmapped key: %d\n%s\n", keycode, COMMANDS);
 	}
-}
-
-int	mouse_hook(int button, int x, int y, t_fractal *fractal)
-{
-	if (button == WHEEL_UP || button == LEFT_CLICK)
-	{
-		fractal->zoom *= 1.1f;
-		fractal->offset_x -= ((WIDTH / 2) - x) / fractal->zoom;
-		fractal->offset_y -= ((HEIGHT / 2) - y) / fractal->zoom;
-	}
-	else if (button == WHEEL_DOWN || button == RIGHT_CLICK)
-	{
-		fractal->zoom /= 1.1f;
-		fractal->offset_x += (x - (WIDTH / 2)) / fractal->zoom;
-		fractal->offset_y += (y - (HEIGHT / 2)) / fractal->zoom;
-	}
-	printf("button : %d\n", button);
-	draw_fractal(fractal);
-	return (0);
 }

@@ -45,7 +45,9 @@ SRCS = ft_isalpha.c \
 	ft_putunbr_fd.c \
 	ft_puthexa_l_fd.c \
 	ft_puthexa_u_fd.c \
-	ft_putptr_fd.c 
+	ft_putptr_fd.c \
+	ft_strtof.c \
+	ft_abs_double.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -78,5 +80,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
-	
+
 .PHONY: all clean fclean re bonus
