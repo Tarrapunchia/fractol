@@ -6,15 +6,15 @@
 /*   By: fzucconi <fzucconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 16:18:10 by fzucconi          #+#    #+#             */
-/*   Updated: 2023/12/05 16:18:26 by fzucconi         ###   ########.fr       */
+/*   Updated: 2023/12/05 19:05:19 by fzucconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-double  abs_double(double n)
+double	abs_double(double n)
 {
-    if (n < 0)
-        return (n * -1);
-    return (n);
+	if (n < 0)
+		return (n * -1);
+	return (n);
 }
