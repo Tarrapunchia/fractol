@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mouse.hooks.c                                      :+:      :+:    :+:   */
+/*   mouse_hooks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fzucconi <fzucconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 17:14:02 by fzucconi          #+#    #+#             */
-/*   Updated: 2023/12/05 17:52:54 by fzucconi         ###   ########.fr       */
+/*   Updated: 2023/12/06 13:37:21 by fzucconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	mouse_hook(int button, int x, int y, t_fractal *fractal)
 		fractal->offset_x += (x - (WIDTH / 2)) / fractal->zoom;
 		fractal->offset_y += (y - (HEIGHT / 2)) / fractal->zoom;
 	}
-	printf("button : %d\n", button);
+	ft_printf("button : %d\n", button);
 	draw_fractal(fractal);
 	return (0);
 }

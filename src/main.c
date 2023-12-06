@@ -6,7 +6,7 @@
 /*   By: fzucconi <fzucconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 14:25:56 by fzucconi          #+#    #+#             */
-/*   Updated: 2023/12/05 18:16:27 by fzucconi         ###   ########.fr       */
+/*   Updated: 2023/12/06 13:37:35 by fzucconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	fractal = malloc(sizeof(t_fractal));
 	if (!fractal)
 		return (-1);
-	printf("Fractal Allocated.\n");
+	ft_printf("Fractal Allocated.\n");
 	frac_init(fractal, "Fractol", flag);
 	if (flag == 2)
 	{

@@ -47,7 +47,11 @@ SRCS = ft_isalpha.c \
 	ft_puthexa_u_fd.c \
 	ft_putptr_fd.c \
 	ft_strtof.c \
-	ft_abs_double.c
+	ft_abs_double.c \
+	ft_printf.c \
+	ft_utils.c \
+	ft_print_checks.c \
+	ft_print_checks2.c
 
 OBJS = $(SRCS:.c=.o)
 

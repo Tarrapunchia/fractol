@@ -6,7 +6,7 @@
 /*   By: fzucconi <fzucconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 14:26:09 by fzucconi          #+#    #+#             */
-/*   Updated: 2023/12/05 17:17:09 by fzucconi         ###   ########.fr       */
+/*   Updated: 2023/12/06 13:38:00 by fzucconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,19 @@ void	frac_init(t_fractal *fractal, char *title, int flag)
 	fractal->color_shift_step = (255 * 255 * 255) / 100;
 	fractal->color_shift_max = 0xFFFFFF;
 	fractal->color_shift_min = 0x000000;
-	printf("Fractal Initialized.\n");
+	ft_printf("Fractal Initialized.\n");
 }
 
 int	killall_free(t_fractal *fractal)
 {
-	printf("ESC pressed!\n");
-	printf("Killing all processes...\n");
+	ft_printf("ESC pressed!\n");
+	ft_printf("Killing all processes...\n");
 	mlx_destroy_image(fractal->mlx, fractal->img);
 	mlx_destroy_window(fractal->mlx, fractal->win);
 	mlx_destroy_display(fractal->mlx);
 	free(fractal->mlx);
 	free(fractal);
-	printf("Memory Cleared.\nExiting...\n");
+	ft_printf("Memory Cleared.\nExiting...\n");
 	exit(1);
 	return (0);
 }
@@ -75,20 +75,20 @@ int	check_args(int argc, char **argv)
 
 	if (argc < 2)
 	{
-		printf("Error: missing argument!\n");
-		printf("%s", INSTRUCTIONS);
+		ft_printf("Error: missing argument!\n");
+		ft_printf("%s", INSTRUCTIONS);
 		exit(1);
 	}
 	if (!ft_strncmp(argv[1], "--help\0", 7) || !ft_strncmp(argv[1], "-h\0", 3))
 	{
-		printf("%s", INSTRUCTIONS);
+		ft_printf("%s", INSTRUCTIONS);
 		exit(1);
 	}
 	valid = check_valid(argv[1]);
 	if (valid == 0)
 	{
-		printf("Error: invalid argument!\n");
-		printf("%s", INSTRUCTIONS);
+		ft_printf("Error: invalid argument!\n");
+		ft_printf("%s", INSTRUCTIONS);
 		exit(1);
 	}
 	return (valid);

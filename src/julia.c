@@ -6,7 +6,7 @@
 /*   By: fzucconi <fzucconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 14:25:43 by fzucconi          #+#    #+#             */
-/*   Updated: 2023/12/05 18:15:34 by fzucconi         ###   ########.fr       */
+/*   Updated: 2023/12/06 13:36:38 by fzucconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,19 +60,19 @@ int	julia_hook(int keycode, t_fractal *fractal)
 	if (keycode == J)
 	{
 		random_double(fractal);
-		printf("Rand Julia!\nc_x: %f\tc_y: %f\n", fractal->c_x, fractal->c_y);
+		ft_printf("Rnd Julia!\ncx: %f\tcy: %f\n", fractal->c_x, fractal->c_y);
 	}
 	else if (keycode == K)
 	{
 		fractal->c_x += C_STEP;
 		fractal->c_y += C_STEP;
-		printf("Increased Cs!\n");
+		ft_printf("Increased Cs!\n");
 	}
 	else if (keycode == L)
 	{
 		fractal->c_x -= C_STEP;
 		fractal->c_y -= C_STEP;
-		printf("Decreased Cs!\n");
+		ft_printf("Decreased Cs!\n");
 	}
 	return (0);
 }
@@ -87,5 +87,5 @@ void	reset_julia(t_fractal *fractal)
 	fractal->zoom = 300;
 	fractal->offset_x = -2.1;
 	fractal->offset_y = -1.21;
-	printf("Reset Julia!\n");
+	ft_printf("Reset Julia!\n");
 }

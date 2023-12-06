@@ -6,7 +6,7 @@
 /*   By: fzucconi <fzucconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 11:30:06 by fzucconi          #+#    #+#             */
-/*   Updated: 2023/12/05 16:34:36 by fzucconi         ###   ########.fr       */
+/*   Updated: 2023/12/06 13:33:17 by fzucconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 # include <stdint.h>
 # include <stddef.h>
 # include <unistd.h>
+# include <stdarg.h>
+# include <stdio.h>
+# include <fcntl.h>
+# include <limits.h>
 
 typedef struct s_list
 {
@@ -88,7 +92,20 @@ int				ft_puthexa_l_fd(unsigned int nb, int fd);
 int				ft_puthexa_u_fd(unsigned int nb, int fd);
 int				ft_putunbr_fd(unsigned int n, int fd);
 int				ft_putptr_fd(unsigned long int nb, int fd);
-
+int				ft_printf(const char *format, ...);
+void			ft_putstr_fd(char *s, int fd);
+void			ft_putchar_fd(char c, int fd);
+void			ft_putnbr_fd(int n, int fd);
+int				ft_print_formatted(char *format, va_list arg, int fd);
+int				ft_check_print_c(char *format, va_list arg, int fd);
+int				ft_check_print_s(char *format, va_list arg, int fd);
+int				ft_check_print_d_i(char *format, va_list arg, int fd);
+int				ft_check_print_perc(char *format, int fd);
+int				ft_check_print_u(char *format, va_list arg, int fd);
+int				ft_check_print_x(char *format, va_list arg, int fd);
+int				ft_check_print_u_x(char *format, va_list arg, int fd);
+int				ft_check_print_p(char *format, va_list arg, int fd);
+int				ft_numlen(int num);
 /******************************************************************************/
 /*                     		Math functions                                    */
 /******************************************************************************/
