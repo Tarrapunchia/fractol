@@ -6,7 +6,7 @@
 /*   By: fzucconi <fzucconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 14:26:05 by fzucconi          #+#    #+#             */
-/*   Updated: 2023/12/05 14:26:06 by fzucconi         ###   ########.fr       */
+/*   Updated: 2023/12/06 14:06:00 by fzucconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,6 @@ void	*draw_tricorn(void *frac_void)
 		fractal->x++;
 	}
 	mlx_put_image_to_window(fractal->mlx, fractal->win, fractal->img, 0, 0);
+	draw_commands_and_infos(fractal);
 	return (NULL);
 }

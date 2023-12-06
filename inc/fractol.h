@@ -6,7 +6,7 @@
 /*   By: fzucconi <fzucconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 14:26:48 by fzucconi          #+#    #+#             */
-/*   Updated: 2023/12/05 18:15:47 by fzucconi         ###   ########.fr       */
+/*   Updated: 2023/12/06 14:26:33 by fzucconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,6 +137,9 @@ int		mouse_hook(int button, int x, int y, t_fractal *fractal);
 /****************************************************************************/
 void	draw_fractal(t_fractal *fractal);
 void	my_mlx_pixel_put(t_fractal *data, int x, int y, int color);
+void	draw_infos(t_fractal *fractal);
+void	draw_commands_and_infos(t_fractal *fractal);
+void	draw_commands_and_infos2(t_fractal *fractal);
 
 /****************************************************************************/
 /*                               MANDELBROT.C                               */
