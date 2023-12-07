@@ -48,6 +48,7 @@ $(DIR_OBJ)/%.o: $(DIR_SRC)/%.c
 	@echo "$(COLOR_GREEN)Compiled.✅$(COLOR_END)"
 
 clean:
+	@clear
 	@echo "$(COLOR_BLUE)Cleaning object files.$(COLOR_END)"
 	$(RM) -r $(DIR_OBJ)/*.o
 	@echo "$(COLOR_GREEN)Cleaned.✅$(COLOR_END)"
@@ -57,6 +58,7 @@ fclean: clean
 	$(RM) $(NAME) libft.a libmlx_Linux.a
 	@make -C $(LIBFT) fclean
 	@make -C $(MINLIBX) clean
+	@clear
 	@echo "$(COLOR_GREEN)Cleaned.✅$(COLOR_END)"
 
 re: fclean all title
@@ -112,4 +114,3 @@ title:
 	@echo "$(COLOR_BLUE)$(BOLD)Fractol is a project that consists in creating a small fractal exploration program.$(COLOR_END)"
 	@echo "$(COLOR_BLUE)$(BOLD)This program is able to display four different fractals: Mandelbrot, Julia, Burning Ships and Tricorn.$(COLOR_END)"
 	@echo "$(COLOR_BLUE)$(BOLD)The program is able to zoom in and out, change the color palette, change the fractal and move the fractal.$(COLOR_END)"
-	@echo "$(COLOR_BLUE)$(BOLD)The program is also able to display the number of iterations.$(COLOR_END)"
