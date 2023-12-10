@@ -66,10 +66,13 @@ SRCS_BONUS = ft_lstnew.c \
 	ft_lstmap.c
 
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
+COLOR_GREEN=\033[0;32m
+COLOR_END=\033[0m
 
 all: $(NAME)
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
+	@echo "$(COLOR_GREEN)$(NAME) created.✅$(COLOR_END)"
 
 bonus: $(OBJS_BONUS)
 	$(AR) $(NAME) $(OBJS_BONUS)
@@ -82,7 +85,9 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
+	@echo "$(COLOR_GREEN)$(NAME) cleaned.✅$(COLOR_END)"
 
 re: fclean all
 
 .PHONY: all clean fclean re bonus
+.SILENT: clean fclean re $(NAME) $(OBJS) $(OBJS_BONUS) $(SRCS) $(SRCS_BONUS)

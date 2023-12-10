@@ -35,11 +35,14 @@
 /****************************************************************************/
 # define WIDTH 800
 # define HEIGHT 800
-# define INSTRUCTIONS "Usage: ./fractol --mandelbrot (-m)\n\
-		 --julia (-j) (double) (double)\n\
-		 --burning-ship (-bs)\n\
-		 --tricorn (-t)\n\
-		 --help (-h)\n"
+# define INSTRUCTIONS "\n\n\
+/*****************************************************\\\n\
+|   Usage: ./fractol --mandelbrot (-m)                |\n\
+|                    --julia (-j) (double) (double)   |\n\
+|                    --burning-ship (-bs)             |\n\
+|                    --tricorn (-t)                   |\n\
+|                    --help (-h)                      |\n\
+\\****************************************************/\n\n"
 # define COMMANDS "Commands:\n\
 				 Zoom: + -\n\
 				 Move: arrows\n\

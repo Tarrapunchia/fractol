@@ -1,6 +1,17 @@
-# fractol
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fractol                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fzucconi <fzucconi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/05 14:25:52 by fzucconi          #+#    #+#             */
+/*   Updated: 2023/12/06 13:37:05 by fzucconi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+/* # fractol
 
-Project made for 42CommonCore project "fract'ol" @42Firenze by fzucconi.
+Project made for 42CommonCore project "fract'ol" @42Firenze.
 
 The aim is to display on screen, using a xlib wrapper library called minlibx, different types of fractals based on the set used to calculate them. The choice (and other optional parameters) are passed via terminal when the program is launched.
 
@@ -49,7 +60,7 @@ Logical steps involved in writing such a program are:
 - Introduction to the minilibX : a simple X-Window programming API in C (by Oceano)
 [![Minlibix Explaination](https://img.youtube.com/vi/bYS93r6U0zg/0.jpg)](https://www.youtube.com/watch?v=bYS93r6U0zg)
 - How to generate fractals (in french, sub ENG). The first part is enlightening!
-[![How to generate fractals (in french, sub ENG)](https://img.youtube.com/vi/wUlVFYJIUNA/0.jpg)](https://www.youtube.com/watch?v=wUlVFYJIUNA)
+[![How to generate fractals (in french, sub ENG)](https://img.youtube.com/vi/wUlVFYJIUNA/0.jpg)](https://www.youtube.com/watch?v=wUlVFYJIUNA) */
 
 
 

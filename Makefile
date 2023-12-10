@@ -32,38 +32,42 @@ title: all
 all: $(NAME)
 $(NAME): $(OBJS)
 	@echo "$(COLOR_BLUE)Creating libft.a and copying it to root directory.$(COLOR_END)"
-	@make -C $(LIBFT)
-	@cp $(LIBFT)/libft.a .
+	make -C $(LIBFT)
+	cp $(LIBFT)/libft.a .
 	@echo "$(COLOR_BLUE)Creating libmlx_Linux.a and copying it to root directory.$(COLOR_END)"
-	@make -C $(MINLIBX)
-	@cp $(MINLIBX)/libmlx_Linux.a .
+	make -C $(MINLIBX)
+	cp $(MINLIBX)/libmlx_Linux.a .
 	@echo "$(COLOR_BLUE)Creating $(NAME).$(COLOR_END)"
-	@$(CC) $(OBJS) libft.a libmlx_Linux.a $(PFLAGS) $(NAME)
+	$(CC) $(OBJS) libft.a libmlx_Linux.a $(PFLAGS) $(NAME)
 	@echo "$(COLOR_GREEN)$(NAME) created.✅$(COLOR_END)"
 
 $(DIR_OBJ)/%.o: $(DIR_SRC)/%.c
-	@echo "Compiling $< into $@.\n"
-	@mkdir -p $(DIR_OBJ)
+	# @echo "Compiling $< into $@.\n"
+	mkdir -p $(DIR_OBJ)
 	$(CC) $(CFLAGS) -I $(HEADER) -c $< -o $@
-	@echo "$(COLOR_GREEN)Compiled.✅$(COLOR_END)"
+	# @echo "$(COLOR_GREEN)Compiled.✅$(COLOR_END)"
 
 clean:
-	@clear
+	clear
 	@echo "$(COLOR_BLUE)Cleaning object files.$(COLOR_END)"
 	$(RM) -r $(DIR_OBJ)/*.o
-	@echo "$(COLOR_GREEN)Cleaned.✅$(COLOR_END)"
+	@echo "$(COLOR_GREEN)$(NAME) object files cleaned.✅$(COLOR_END)"
 
 fclean: clean
-	@echo "$(COLOR_BLUE)Cleaning object files, $(NAME) and libft.$(COLOR_END)"
+	@echo "$(COLOR_BLUE)Cleaning $(NAME) and libft.$(COLOR_END)"
 	$(RM) $(NAME) libft.a libmlx_Linux.a
-	@make -C $(LIBFT) fclean
-	@make -C $(MINLIBX) clean
-	@clear
-	@echo "$(COLOR_GREEN)Cleaned.✅$(COLOR_END)"
+	make -C $(LIBFT) fclean
+	make -C $(MINLIBX) clean
+	@echo "$(COLOR_GREEN)Project $(NAME) cleaned.✅$(COLOR_END)"
 
 re: fclean all title
 
+readme:
+	clear
+	cat README.c
+
 .PHONY: all clean fclean re
+.SILENT: clean fclean re $(NAME) $(OBJS) $(DIR_OBJ)/%.o $(DIR_SRC)/%.c readme
 
 title:
 	@clear
@@ -113,4 +117,5 @@ title:
 	@echo " "
 	@echo "$(COLOR_BLUE)$(BOLD)Fractol is a project that consists in creating a small fractal exploration program.$(COLOR_END)"
 	@echo "$(COLOR_BLUE)$(BOLD)This program is able to display four different fractals: Mandelbrot, Julia, Burning Ships and Tricorn.$(COLOR_END)"
-	@echo "$(COLOR_BLUE)$(BOLD)The program is able to zoom in and out, change the color palette, change the fractal and move the fractal.$(COLOR_END)"
+	@echo "$(COLOR_BLUE)$(BOLD)The program is able to zoom in and out, change the color palette, change the iterations and move the fractal.$(COLOR_END)"
+	@echo "$(COLOR_BLUE)$(BOLD)Type ./fractol to show available flags. For more informations: make readme$(COLOR_END)"
