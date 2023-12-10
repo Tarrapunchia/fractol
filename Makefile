@@ -58,6 +58,7 @@ fclean: clean
 	$(RM) $(NAME) libft.a libmlx_Linux.a
 	make -C $(LIBFT) fclean
 	make -C $(MINLIBX) clean
+	clear
 	@echo "$(COLOR_GREEN)Project $(NAME) cleaned.✅$(COLOR_END)"
 
 re: fclean all title
